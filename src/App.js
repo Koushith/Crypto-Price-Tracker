@@ -13,7 +13,6 @@ function App() {
     axios
       .get(URL)
       .then((res) => {
-        console.log(res);
         setCoins(res.data);
       })
       .catch((err) => console.log(err));
@@ -29,33 +28,35 @@ function App() {
   };
 
   return (
-    <div className='coin-app'>
-      <div className='coin-search'>
-        <h1 className='coin-text'>Search a Currency</h1>
-        <form>
-          <input
-            type='text'
-            placeholder='search'
-            className='coin-input'
-            onChange={handeChange}
-          />
-        </form>
+    <>
+      <div className='coin-app'>
+        <div className='coin-search'>
+          <h1 className='coin-text'>Search a Currency</h1>
+          <form>
+            <input
+              type='text'
+              placeholder='search'
+              className='coin-input'
+              onChange={handeChange}
+            />
+          </form>
+        </div>
+        {filteredCoins.map((coin) => {
+          return (
+            <Coin
+              key={coin.id}
+              name={coin.name}
+              price={coin.current_price}
+              symbol={coin.symbol}
+              marketcap={coin.total_volume}
+              volume={coin.market_cap}
+              image={coin.image}
+              priceChange={coin.price_change_percentage_24h}
+            />
+          );
+        })}
       </div>
-      {filteredCoins.map((coin) => {
-        return (
-          <Coin
-            key={coin.id}
-            name={coin.name}
-            price={coin.current_price}
-            symbol={coin.symbol}
-            marketcap={coin.total_volume}
-            volume={coin.market_cap}
-            image={coin.image}
-            priceChange={coin.price_change_percentage_24h}
-          />
-        );
-      })}
-    </div>
+    </>
   );
 }
 
