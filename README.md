@@ -1,3 +1,17 @@
+## A Simple app that tracks the price of popular crypto currencies built using React and Vanilla CSS.
+
+![image](https://user-images.githubusercontent.com/30016242/126783311-a100fc71-da6c-4d7f-8826-a7ba15d4e38d.png)
+
+![image](https://user-images.githubusercontent.com/30016242/126783383-7a9eb72e-610a-4972-b503-489e8f4a1e3e.png)
+
+https://www.loom.com/share/ea7c5ae9775848d299c57c081f5b45c1
+
+
+## Data is provided by Coingeko API
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
